@@ -15,8 +15,39 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+import os
+
+from . import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'teams', views.TeamViewSet)
+router.register(r'activities', views.ActivityViewSet)
+router.register(r'workouts', views.WorkoutViewSet)
+router.register(r'leaderboard', views.LeaderboardViewSet)
+
+
+@api_view(['GET'])
+def api_root_override(request, format=None):
+    codespace = os.environ.get('CODESPACE_NAME')
+    if codespace:
+        base = f"https://{codespace}-8000.app.github.dev"
+    else:
+        base = request.build_absolute_uri('/')[:-1]
+    return Response({
+        'users': f"{base}/api/users/",
+        'teams': f"{base}/api/teams/",
+        'activities': f"{base}/api/activities/",
+        'workouts': f"{base}/api/workouts/",
+        'leaderboard': f"{base}/api/leaderboard/",
+    })
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('octofit_tracker.urls')),
+    path('api/', api_root_override, name='api-root'),
+    path('api/', include(router.urls)),
 ]
