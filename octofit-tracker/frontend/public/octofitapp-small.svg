@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
+  <rect width="96" height="96" rx="16" fill="#0d6efd"/>
+  <g transform="translate(16,16) scale(0.75)">
+    <circle cx="32" cy="20" r="12" fill="#fff" opacity="0.95" />
+    <rect x="8" y="44" width="48" height="16" rx="4" fill="#fff" opacity="0.95" />
+    <path d="M8 36c8-10 40-10 48 0" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.95"/>
+  </g>
+  <text x="50%" y="90%" font-family="Segoe UI, Roboto, Arial" font-size="10" fill="#ffffff" text-anchor="middle">OctoFit</text>
+</svg>

@@ -1,0 +1,76 @@
+/* App-level styles to make Bootstrap components look consistent */
+body {
+  background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 60%);
+  color: #243b55;
+}
+
+.app-card {
+  box-shadow: 0 6px 18px rgba(15, 41, 78, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border: 1px solid rgba(13,110,253,0.06);
+}
+
+.table-json-cell {
+  max-width: 420px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+}
+
+.card-header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.brand-link {
+  font-weight: 600;
+}
+
+.app-logo {
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  padding: 2px;
+}
+
+/* headings */
+h1, h2, h3, h4, h5 {
+  color: #0d3b66;
+}
+
+/* links */
+.nav-link, a {
+  color: #0d6efd;
+}
+.nav-link.active {
+  font-weight: 600;
+}
+
+/* tables */
+.table thead th {
+  background: linear-gradient(90deg,#e9f2ff,#ffffff);
+  color: #0d3b66;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(13,110,253,0.03);
+}
+
+/* buttons */
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+.btn-outline-secondary {
+  color: #0d3b66;
+  border-color: rgba(13,110,253,0.12);
+}
+
+/* navbar */
+.navbar {
+  background: linear-gradient(90deg, rgba(13,110,253,0.06), rgba(13,110,253,0.01));
+}
+
+.alert {
+  border-radius: 6px;
+}
