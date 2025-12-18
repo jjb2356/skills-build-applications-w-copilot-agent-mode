@@ -12,7 +12,7 @@ export default function Users() {
   const fetchData = useCallback(() => {
     setLoading(true);
     setError(null);
-    const endpoint = `${API_BASE}/users/`;
+    const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME || 'localhost'}-8000.app.github.dev/api/users`;
     console.log('Fetching Users from', endpoint);
     fetch(endpoint)
       .then((res) => res.json())

@@ -12,7 +12,7 @@ export default function Teams() {
   const fetchData = useCallback(() => {
     setLoading(true);
     setError(null);
-    const endpoint = `${API_BASE}/teams/`;
+    const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME || 'localhost'}-8000.app.github.dev/api/teams`;
     console.log('Fetching Teams from', endpoint);
     fetch(endpoint)
       .then((res) => res.json())

@@ -12,7 +12,7 @@ export default function Leaderboard() {
   const fetchData = useCallback(() => {
     setLoading(true);
     setError(null);
-    const endpoint = `${API_BASE}/leaderboard/`;
+    const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME || 'localhost'}-8000.app.github.dev/api/leaderboard`;
     console.log('Fetching Leaderboard from', endpoint);
     fetch(endpoint)
       .then((res) => res.json())

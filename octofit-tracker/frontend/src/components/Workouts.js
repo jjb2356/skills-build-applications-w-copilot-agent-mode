@@ -12,7 +12,7 @@ export default function Workouts() {
   const fetchData = useCallback(() => {
     setLoading(true);
     setError(null);
-    const endpoint = `${API_BASE}/workouts/`;
+    const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME || 'localhost'}-8000.app.github.dev/api/workouts`;
     console.log('Fetching Workouts from', endpoint);
     fetch(endpoint)
       .then((res) => res.json())
